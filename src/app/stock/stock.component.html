@@ -1,0 +1,25 @@
+<h2>Stocks in a table!</h2>
+<table class = "table table-striped">
+    <thead>
+        <th scope="col">stockId</th>
+        <th scope="col">stock</th>
+        <th scope="col">availableQty</th>
+        <th scope="col">purchasePrice</th>
+        <th scope="col">currentPrice</th>
+        <th scope="col">Investment Value</th>
+        <th scope="col">Current Value</th>
+        <th scope="col">Status</th>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let s of holdings" scope="row">
+            <th>{{s.stockId}}</th>
+            <th>{{s.stock}}</th>
+            <th>{{s.availableQty}}</th>
+            <th>{{s.purchasePrice}}</th>
+            <th>{{s.currentPrice}}</th>
+            <th>{{s.availableQty * s.purchasePrice}}</th>
+            <th>{{s.availableQty*s.currentPrice}}</th>
+            <th>{{s.availableQty *(s.currentPrice - s.purchasePrice)}}</th>
+        </tr>
+    </tbody>
+</table>

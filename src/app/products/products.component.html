@@ -1,0 +1,53 @@
+<h1>{{compName}} by {{developer}}</h1>
+<button class = "btn btn-primary" (click) = "greetUser()">Hello there.</button>
+<h2>Product categories in a select!</h2>
+<select >
+    <option *ngFor = "let cat of productCategories">{{cat}}</option>
+</select>
+
+<br>
+
+<input #category placeholder = "Enter a category" type="text">
+<br><br>
+<button (click) = "addProductCategory()" class = "btn btn-primary glyphicon glyphicon-plus">Add a laptop category</button>
+<br><br>
+<button (click) = "addProductCategory2(category.value)"class = "btn btn-primary glyphicon glyphicon-plus">Add any category</button>
+<h2>Products in a list!</h2>
+<ul *ngFor = "let product of productList">
+    <li>pId: {{product.pId}}</li>
+    <li>Name: {{product.pName}}</li>
+    <li>Category: {{product.pCategory}}</li>
+    <li>Price: {{product.pPrice}}</li>
+    <button class = "btn btn-primary glyphicon glyphicon-plus">Add</button>
+</ul>
+
+<h2>Products in a table!</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">pId</th>
+            <th scope="col">pName</th>
+            <th scope="col">pCategory</th>
+            <th scope="col">pPrice</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let product of productList" scope="row">
+            <td>{{product.pId}}</td>
+            <td>{{product.pName}}</td>
+            <td>{{product.pCategory}}</td>
+            <td>{{product.pPrice}}</td>
+            <td><button class = "btn btn-primary glyphicon glyphicon-plus">Add</button></td>
+            <td><button class = "btn btn-warning glyphicon glyphicon-pencil">Edit</button></td>
+            <td><button class = "btn btn-danger glyphicon glyphicon-trash">Delete</button></td>
+        </tr>   
+    </tbody>
+</table>
+
+<h2>Tables in a div!</h2>
+<div *ngFor = "let p of productList" class="table-bordered">
+    <h2>Name: {{p.pName}}</h2>
+    <h3>Category: {{p.pCategory}}</h3>
+    <h3>Price: {{p.pPrice}}</h3>
+</div>
+
